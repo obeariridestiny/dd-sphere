@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DD Sphere - Premium SEO-focused tech blogging platform with advanced analytics, quizzes, and engagement features." />
+    <meta name="keywords" content="tech blog, programming, web development, SEO, analytics, quizzes, react, nodejs" />
+    <meta name="author" content="DD Sphere" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="DD Sphere - Premium Tech Blogging Platform" />
+    <meta property="og:description" content="Advanced SEO-focused tech blogging with analytics, quizzes, and engagement features." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ddsphere.com" />
+    <meta property="og:image" content="/og-image.png" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DD Sphere - Premium Tech Blogging Platform" />
+    <meta name="twitter:description" content="Advanced SEO-focused tech blogging with analytics, quizzes, and engagement features." />
+    <meta name="twitter:image" content="/twitter-image.png" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "DD Sphere",
+      "description": "Premium SEO-focused tech blogging platform",
+      "url": "https://ddsphere.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ddsphere.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <title>DD Sphere - Premium Tech Blogging Platform</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Google Analytics (Add your ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+  </body>
+</html>
