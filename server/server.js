@@ -14,12 +14,10 @@ import quizRoutes from './routes/quizzes.js';
 import analyticsRoutes from './routes/analytics.js';
 import commentRoutes from './routes/comments.js';
 import seoRoutes from './routes/seo.routes.js';
+
 dotenv.config();
 
 const app = express();
-const mongoose = require('mongoose');
-const seoRoutes = require('./routes/seo.routes');
-
 
 // Security middleware
 app.use(helmet());
@@ -50,7 +48,7 @@ app.use('/api/seo', seoRoutes);
 app.use('/api/quizzes', quizRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/comments', commentRoutes);
-app.use('/api/quizzes', quizRoutes);
+// REMOVED DUPLICATE: app.use('/api/quizzes', quizRoutes); // This line was duplicate!
 
 // Health check
 app.get('/api/health', (req, res) => {
