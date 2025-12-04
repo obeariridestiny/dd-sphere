@@ -10,7 +10,6 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/users.js';
-import seoRoutes from './routes/seo.js';
 import quizRoutes from './routes/quizzes.js';
 import analyticsRoutes from './routes/analytics.js';
 import commentRoutes from './routes/comments.js';
