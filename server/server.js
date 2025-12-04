@@ -14,7 +14,6 @@ import seoRoutes from './routes/seo.js';
 import quizRoutes from './routes/quizzes.js';
 import analyticsRoutes from './routes/analytics.js';
 import commentRoutes from './routes/comments.js';
-import analyticsRoutes from './routes/analytics.js';
 import quizRoutes from './routes/quizzes.js';
 import seoRoutes from './routes/seo.routes.js';
 dotenv.config();
