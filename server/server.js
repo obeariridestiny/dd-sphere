@@ -20,6 +20,9 @@ import quizRoutes from './routes/quizzes.js';
 dotenv.config();
 
 const app = express();
+const mongoose = require('mongoose');
+const seoRoutes = require('./routes/seo.routes');
+
 
 // Security middleware
 app.use(helmet());

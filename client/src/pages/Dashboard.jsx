@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useAuth } from '../contexts/AuthContext';
+// In client/src/pages/Dashboard.jsx
+import SEOAnalyzer from '../components/SEO/analyzer';
 
 const DashboardContainer = styled.div`
   max-width: 1200px;
@@ -67,7 +69,14 @@ const ActionTitle = styled.h3`
   margin-bottom: 1rem;
   color: var(--primary-color);
 `;
-
+function Dashboard() {
+  return (
+    <div>
+      <h1>SEO Dashboard</h1>
+      <SEOAnalyzer />
+    </div>
+  );
+}
 const Dashboard = () => {
   const { user } = useAuth();
 
