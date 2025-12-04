@@ -16,7 +16,7 @@ import analyticsRoutes from './routes/analytics.js';
 import commentRoutes from './routes/comments.js';
 import analyticsRoutes from './routes/analytics.js';
 import quizRoutes from './routes/quizzes.js';
-
+import seoRoutes from './routes/seo.routes.js';
 dotenv.config();
 
 const app = express();
@@ -53,7 +53,6 @@ app.use('/api/seo', seoRoutes);
 app.use('/api/quizzes', quizRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/comments', commentRoutes);
-app.use('/api/analytics', analyticsRoutes);
 app.use('/api/quizzes', quizRoutes);
 
 // Health check
