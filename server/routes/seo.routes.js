@@ -1,6 +1,6 @@
 import express from 'express';
 import axios from 'axios';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 import { URL } from 'url';
 import SEOAnalysis from '../models/seoAnalysis.model.js';
 import auth from '../middleware/auth.js';
