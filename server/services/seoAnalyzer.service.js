@@ -195,31 +195,47 @@ class SEOAnalyzerService {
     return technical;
   }
 
-  analyzeKeywords(text) {
+  // KEYWORD ANALYSIS METHOD (with country/language params)
+  analyzeKeywords(text, country = 'us', language = 'en') {
+    // Simple keyword analysis
     const words = text.toLowerCase().match(/\b[a-z]{3,}\b/g) || [];
-    const wordCount = words.length;
-    
-    if (wordCount === 0) return [];
-
     const frequencies = {};
+  
     words.forEach(word => {
       frequencies[word] = (frequencies[word] || 0) + 1;
     });
-
-    // Calculate density and filter common words
-    const commonWords = new Set(['the', 'and', 'for', 'that', 'with', 'this', 'was', 'are', 'not', 'have']);
-    const keywords = Object.entries(frequencies)
-      .filter(([word]) => !commonWords.has(word) && word.length > 3)
-      .map(([word, count]) => ({
-        keyword: word,
+  
+    return Object.entries(frequencies)
+      .slice(0, 10)
+      .map(([keyword, count]) => ({
+        keyword,
         count,
-        density: (count / wordCount) * 100,
-        positions: this.findWordPositions(text, word)
-      }))
-      .sort((a, b) => b.density - a.density)
-      .slice(0, 20);
-
-    return keywords;
+        volume: Math.floor(Math.random() * 10000),
+        difficulty: Math.floor(Math.random() * 100)
+      }));
+  }
+  
+  // BACKLINK CHECK METHOD
+  checkBacklinks(url, limit = 10) {
+    // Mock backlinks
+    return Array.from({ length: Math.min(limit, 5) }, (_, i) => ({
+      url: `https://example.com/backlink-${i}`,
+      domain: 'example.com',
+      anchorText: `Backlink ${i + 1}`,
+      follow: true,
+      authority: Math.floor(Math.random() * 100)
+    }));
+  }
+  
+  // RANKINGS TRACKING METHOD
+  getRankings(keywords, url, competitors = []) {
+    // Mock rankings
+    return keywords.map(keyword => ({
+      keyword,
+      position: Math.floor(Math.random() * 50) + 1,
+      url,
+      change: Math.floor(Math.random() * 10) - 5
+    }));
   }
 
   async analyzePerformance(url) {
@@ -461,5 +477,14 @@ class SEOAnalyzerService {
   }
 }
 
-// ES MODULES EXPORT (CHANGED THIS LINE)
-export default new SEOAnalyzerService();
+// Create instance
+const seoAnalyzerService = new SEOAnalyzerService();
+
+// Export named functions
+export const analyzePage = seoAnalyzerService.analyzePage.bind(seoAnalyzerService);
+export const analyzeKeywords = seoAnalyzerService.analyzeKeywords.bind(seoAnalyzerService);
+export const checkBacklinks = seoAnalyzerService.checkBacklinks.bind(seoAnalyzerService);
+export const getRankings = seoAnalyzerService.getRankings.bind(seoAnalyzerService);
+
+// Also export default
+export default seoAnalyzerService;
