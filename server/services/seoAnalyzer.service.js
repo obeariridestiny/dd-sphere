@@ -1,9 +1,6 @@
-const axios = require('axios');
-const cheerio = require('cheerio');
-const lighthouse = require('lighthouse');
-const chromeLauncher = require('chrome-launcher');
-const { URL } = require('url');
-const readability = require('readability');
+import axios from 'axios';
+import cheerio from 'cheerio';
+import { URL } from 'url';
 
 class SEOAnalyzerService {
   constructor() {
@@ -18,11 +15,9 @@ class SEOAnalyzerService {
 
   async analyzePage(url, userId, fullAnalysis = true) {
     try {
-      const [html, performance, backlinks] = await Promise.all([
-        this.fetchHTML(url),
-        fullAnalysis ? this.analyzePerformance(url) : null,
-        fullAnalysis ? this.getBacklinks(url) : null
-      ]);
+      const html = await this.fetchHTML(url);
+      const performance = fullAnalysis ? await this.analyzePerformance(url) : null;
+      const backlinks = fullAnalysis ? await this.getBacklinks(url) : null;
 
       const $ = cheerio.load(html);
       
@@ -166,8 +161,7 @@ class SEOAnalyzerService {
       hasStructuredData: false,
       hreflang: [],
       pageSize: 0,
-      loadTime: 0,
-      httpHeaders: {}
+      loadTime: 0
     };
 
     // Check mobile viewport
@@ -467,4 +461,5 @@ class SEOAnalyzerService {
   }
 }
 
-module.exports = new SEOAnalyzerService();
+// ES MODULES EXPORT (CHANGED THIS LINE)
+export default new SEOAnalyzerService();

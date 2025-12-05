@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const SEOCheckSchema = new mongoose.Schema({
   category: {
@@ -31,18 +31,6 @@ const SEORankingSchema = new mongoose.Schema({
   difficulty: Number,
   url: String,
   date: Date
-});
-
-const SEOCampaignSchema = new mongoose.Schema({
-  name: String,
-  keywords: [String],
-  targetUrl: String,
-  competitors: [String],
-  goals: {
-    targetPosition: Number,
-    targetTraffic: Number,
-    timeframe: Date
-  }
 });
 
 const SEOLinkSchema = new mongoose.Schema({
@@ -158,4 +146,5 @@ SEOAnalysisSchema.index({ userId: 1, analyzedAt: -1 });
 SEOAnalysisSchema.index({ score: -1 });
 SEOAnalysisSchema.index({ tags: 1 });
 
-module.exports = mongoose.model('SEOAnalysis', SEOAnalysisSchema);
+// ES MODULES EXPORT (CHANGED THIS LINE)
+export default mongoose.model('SEOAnalysis', SEOAnalysisSchema);
