@@ -23,7 +23,9 @@
     "compression": "^1.7.4",
     "express-validator": "^7.0.1",
     "nodemailer": "^6.9.4",
-    "natural": "^6.3.0"
+    "natural": "^6.3.0",
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
