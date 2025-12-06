@@ -69,14 +69,6 @@ const ActionTitle = styled.h3`
   margin-bottom: 1rem;
   color: var(--primary-color);
 `;
-function Dashboard() {
-  return (
-    <div>
-      <h1>SEO Dashboard</h1>
-      <SEOAnalyzer />
-    </div>
-  );
-}
 const Dashboard = () => {
   const { user } = useAuth();
 
