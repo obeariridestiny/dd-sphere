@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useAuth } from '../contexts/AuthContext';
 import { postsAPI } from '../api/posts';
-import SEOAnalyzer from '../components/SEO/Analyzer';
+import SEOAnalyzer from '../components/SEO/Analyzer.jsx';
 
 const EditorContainer = styled.div`
   max-width: 1000px;
