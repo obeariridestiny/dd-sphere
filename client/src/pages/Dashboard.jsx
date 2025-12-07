@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useAuth } from '../contexts/AuthContext';
 // In client/src/pages/Dashboard.jsx
-import SEOAnalyzer from '../components/SEO/analyzer';
+import SEOAnalyzer from '../components/SEO/Analyzer.jsx';
 
 const DashboardContainer = styled.div`
   max-width: 1200px;
